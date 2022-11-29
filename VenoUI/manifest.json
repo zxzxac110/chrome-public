@@ -1,0 +1,30 @@
+{
+  "name": "VenoUI插件",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "VenoUI插件",
+  "browser_action": {
+    "default_icon": "image/logo.png",
+    "default_title": "VenoUI插件助手",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "https://venoui.fdota.com/components/*",
+    "webRequest",
+    "tabs",
+    "webRequestBlocking"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://venoui.fdota.com/components/*"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ]
+}
