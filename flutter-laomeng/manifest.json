@@ -1,0 +1,31 @@
+{
+  "name": "flutter-laomeng",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "flutter-laomeng",
+  "browser_action": {
+    "default_icon": "image/logo.png",
+    "default_title": "flutter-laomeng",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "http://laomengit.com/*",
+    "webRequest",
+    "tabs",
+    "webRequestBlocking"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://laomengit.com/*"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ]
+}
+
